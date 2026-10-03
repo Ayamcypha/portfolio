@@ -2,15 +2,13 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Code, Globe, Terminal, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react'
+import { ArrowRight, Code, Globe, Terminal, Mail, Github, Instagram } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import { cn } from '@/lib/utils'
 
 const socialLinks = [
   { name: 'GitHub', url: 'https://github.com', icon: Github },
-  { name: 'LinkedIn', url: 'https://linkedin.com', icon: Linkedin },
-  { name: 'Twitter', url: 'https://twitter.com', icon: Twitter },
   { name: 'Instagram', url: 'https://www.instagram.com/vices_of_cypha?stkn=NTd4bmtqb3RrOHM2&utm_source=qr', icon: Instagram },
   { name: 'Email', url: 'mailto:michael.webdesignss@gmail.com', icon: Mail },
 ]
