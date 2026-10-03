@@ -2,12 +2,13 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ExternalLink, Github, ArrowUpRight } from 'lucide-react'
+import { ExternalLink, Github, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react'
 import { Card, CardContent, CardFooter } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import type { Project } from '@/types'
 import { cn } from '@/lib/utils'
+import { useState } from 'react'
 
 interface ProjectCardProps {
   project: Project
@@ -17,6 +18,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index = 0, variant = 'default' }: ProjectCardProps) {
   const isFeatured = variant === 'featured'
+  const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <ScrollReveal delay={index * 0.1} direction="up">
@@ -58,9 +60,33 @@ export function ProjectCard({ project, index = 0, variant = 'default' }: Project
             <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
               {project.title}
             </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
+            <div
+              id={`project-desc-${project.slug}`}
+              className="text-muted-foreground text-sm leading-relaxed mb-3 overflow-hidden transition-all duration-300 ease-out"
+              style={{
+                maxHeight: isExpanded ? 'none' : '4.5rem',
+              }}
+            >
               {project.description}
-            </p>
+            </div>
+            {project.description.length > 180 && (
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-sm font-medium text-primary hover:underline inline-flex items-center gap-1 mb-4"
+                aria-expanded={isExpanded}
+                aria-controls={`project-desc-${project.slug}`}
+              >
+                {isExpanded ? (
+                  <>
+                    Read less <ChevronUp className="h-3.5 w-3.5" aria-hidden="true" />
+                  </>
+                ) : (
+                  <>
+                    Read more <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+                  </>
+                )}
+              </button>
+            )}
           </CardContent>
 
           <CardFooter className="flex flex-wrap items-center gap-3 p-6 pt-0 border-t">

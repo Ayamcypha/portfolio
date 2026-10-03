@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, Github, Calendar, Tag, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
@@ -52,43 +51,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="min-h-screen">
-      <header className="relative aspect-video md:aspect-[2/1] overflow-hidden">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORwkJggg=="
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-          <div className="container mx-auto max-w-4xl">
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-6"
-            >
-              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-              Back to Projects
-            </Link>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.techStack.map((tech) => (
-                <span key={tech} className="px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-              {project.title}
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl">{project.description}</p>
-          </div>
-        </div>
-      </header>
-
       <div className="container mx-auto px-4 py-16 md:py-24 max-w-4xl">
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-8"
+        >
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          Back to Projects
+        </Link>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.techStack.map((tech) => (
+            <span key={tech} className="px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
+              {tech}
+            </span>
+          ))}
+        </div>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+          {project.title}
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mb-12">{project.description}</p>
+
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           <div className="lg:col-span-2 space-y-12">
             <section aria-labelledby="overview-heading">

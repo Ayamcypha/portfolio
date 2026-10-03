@@ -31,21 +31,21 @@ export const projects: Project[] = [
   {
     slug: 'ergonexus',
     title: 'Ergonexus Ltd',
-    description: 'Corporate website featuring services, team, and contact forms.',
+    description: 'A modern, responsive booking platform for Ergonexus Ltd — airport transfers, chauffeurs & tours — built to generate leads through SEO, establish credibility, accept direct payments via gateway, and streamline bookings with automated workflows.',
     longDescription: `
-      A professional corporate website for Ergonexus Ltd showcasing their services,
-      team members, and contact information. Built with a modern tech stack
-      for optimal performance and user experience.
+      A comprehensive booking platform for Ergonexus Ltd's airport transfer, chauffeur, and tour services. 
+      The website drives qualified leads through SEO optimization and establishes trust with a professional digital presence.
       
       **Key Features:**
-      - Service listings with detailed descriptions
-      - Team member profiles
-      - Contact form with validation
-      - Responsive design with Tailwind CSS
-      - Smooth animations with Framer Motion
-      - SEO optimized
+      - Real-time route calculation & dynamic pricing engine
+      - Secure payment gateway integration (direct payments)
+      - "Reserve now, pay later" flexible booking option
+      - Admin dashboard for booking management & operations
+      - Automated email confirmations & notifications on booking
+      - Fully responsive, SEO-optimized for lead generation
+      - Smooth animations & premium UX with Framer Motion
     `,
-    image: '/images/project-ergonexus.jpg',
+    image: '/images/ergonexusscreenshot.png',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     liveUrl: 'https://www.ergonexusltd.com',
     repoUrl: undefined,
