@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Code, Globe, Terminal, Mail, Github, Linkedin, Twitter } from 'lucide-react'
+import { ArrowRight, Code, Globe, Terminal, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import { cn } from '@/lib/utils'
@@ -11,49 +11,54 @@ const socialLinks = [
   { name: 'GitHub', url: 'https://github.com', icon: Github },
   { name: 'LinkedIn', url: 'https://linkedin.com', icon: Linkedin },
   { name: 'Twitter', url: 'https://twitter.com', icon: Twitter },
-  { name: 'Email', url: 'mailto:hello@example.com', icon: Mail },
+  { name: 'Instagram', url: 'https://www.instagram.com/vices_of_cypha?stkn=NTd4bmtqb3RrOHM2&utm_source=qr', icon: Instagram },
+  { name: 'Email', url: 'mailto:michael.webdesignss@gmail.com', icon: Mail },
 ]
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden" aria-labelledby="hero-heading">
       <div className="container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <ScrollReveal delay={0} direction="up">
-            <div className="relative w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden ring-2 ring-primary/20">
-              <Image
-                src="/images/myself.jpg"
-                alt="Profile"
-                fill
-                className="object-cover"
-                priority
-                sizes="128px"
-              />
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-start md:items-start gap-8 md:gap-12 mb-16">
+            <ScrollReveal delay={0} direction="up">
+              <div className="relative w-72 h-72 md:w-80 md:h-80 flex-shrink-0 rounded-2xl overflow-hidden ring-2 ring-primary/20">
+                <Image
+                  src="/images/myself.jpg"
+                  alt="Profile"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="320px"
+                />
+              </div>
+            </ScrollReveal>
+
+            <div className="flex flex-col items-start text-left mt-4 md:mt-0 w-full">
+              <ScrollReveal delay={0.1} direction="up">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                  <Code className="h-4 w-4" aria-hidden="true" />
+                  Full-Stack Product Engineer
+                </span>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.15} direction="up">
+                <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 leading-tight mt-2">
+                  Michael Kwaku Nyame Mensah
+                </h1>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.2} direction="up">
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xs md:max-w-md">
+                  Passionate about creating scalable, maintainable software. I specialize in web technologies
+                  and understand the importance of simplicity.
+                </p>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1} direction="up">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <Code className="h-4 w-4" aria-hidden="true" />
-              Full-Stack Product Engineer
-            </span>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.2} direction="up">
-            <h1 id="hero-heading" className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
-              Your Name
-            </h1>
-          </ScrollReveal>
+          </div>
 
           <ScrollReveal delay={0.3} direction="up">
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Passionate about creating scalable, maintainable software. I specialize in web technologies
-              and understand the importance of simplicity.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.4} direction="up">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-16">
               <Button size="lg" asChild>
                 <Link href="/about">
                   About Me
@@ -73,10 +78,10 @@ export function Hero() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.5} direction="up">
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+          <ScrollReveal delay={0.4} direction="up">
+            <div className="flex flex-wrap items-center justify-start gap-6 text-sm text-muted-foreground">
               {socialLinks.map((social, index) => (
-                <ScrollReveal key={social.name} delay={0.5 + index * 0.1} direction="up">
+                <ScrollReveal key={social.name} delay={0.4 + index * 0.1} direction="up">
                   <a
                     href={social.url}
                     target="_blank"

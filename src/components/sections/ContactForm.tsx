@@ -42,7 +42,7 @@ export function ContactForm() {
       const body = encodeURIComponent(
         `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
       )
-      const mailtoLink = `mailto:hello@example.com?subject=${subject}&body=${body}`
+      const mailtoLink = `mailto:michael.webdesignss@gmail.com?subject=${subject}&body=${body}`
       window.location.href = mailtoLink
 
       setSubmitStatus('success')
@@ -187,7 +187,7 @@ export function ContactForm() {
 
         <ScrollReveal delay={0.3} direction="up">
           <p className="text-center text-sm text-muted-foreground mt-8">
-            Or email directly at <a href="mailto:hello@example.com" className="text-primary hover:underline">hello@example.com</a>
+            Or email directly at <a href="mailto:michael.webdesignss@gmail.com" className="text-primary hover:underline">michael.webdesignss@gmail.com</a>
           </p>
         </ScrollReveal>
       </div>

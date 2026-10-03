@@ -1,12 +1,11 @@
 import Link from 'next/link'
-import { Github, Linkedin, Twitter, Mail, ExternalLink } from 'lucide-react'
+import { Github, Mail, Instagram, ExternalLink } from 'lucide-react'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
 const socialLinks = [
   { name: 'GitHub', url: 'https://github.com', icon: Github },
-  { name: 'LinkedIn', url: 'https://linkedin.com', icon: Linkedin },
-  { name: 'Twitter', url: 'https://twitter.com', icon: Twitter },
-  { name: 'Email', url: 'mailto:hello@example.com', icon: Mail },
+  { name: 'Instagram', url: 'https://www.instagram.com/vices_of_cypha?stkn=NTd4bmtqb3RrOHM2&utm_source=qr', icon: Instagram },
+  { name: 'Email', url: 'mailto:michael.webdesignss@gmail.com', icon: Mail },
 ]
 
 const navigateLinks = [

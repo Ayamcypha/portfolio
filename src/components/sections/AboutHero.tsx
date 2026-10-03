@@ -17,7 +17,7 @@ export function AboutHero() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image Left */}
             <motion.div
-              className="relative aspect-square max-w-lg mx-auto lg:mx-0"
+              className="relative aspect-square w-full max-w-lg mx-auto lg:max-w-none lg:mx-0"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-100px' }}
