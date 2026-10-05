@@ -2,30 +2,31 @@ import type { Project } from '@/types'
 
 export const projects: Project[] = [
   {
-    slug: 'ecommerce',
-    title: 'E-Commerce Platform',
-    description: 'Full-featured ecommerce with cart, checkout, and admin dashboard.',
+    slug: 'portfolio',
+    title: 'Portfolio Website',
+    description: 'My personal portfolio built with Next.js, featuring project showcase, experience timeline, and responsive design.',
     longDescription: `
-      A complete e-commerce platform built with Next.js, featuring user authentication,
-      product management, shopping cart, mock payment flow, and an admin
-      dashboard for order management.
+      A modern, animated personal portfolio website showcasing my projects, experience, and technical evolution. 
+      Built with performance and accessibility in mind, featuring smooth scroll animations and a clean, responsive design.
       
       **Key Features:**
-      - User authentication (client-side mock)
-      - Product catalog with categories and search
-      - Shopping cart with persistent state (localStorage)
-      - Mock payment flow (demo mode)
-      - Admin dashboard for orders, products, and categories
-      - Responsive design with Tailwind CSS
-      - React Context for state management
+      - Project showcase with detailed case studies
+      - Interactive experience timeline with career progression
+      - Technical evolution visualization
+      - Skills & technology cloud with proficiency levels
+      - Smooth scroll animations with Framer Motion
+      - Fully responsive, mobile-first design
+      - Dark mode support
+      - SEO optimized with metadata & Open Graph
+      - Static generation for fast performance
     `,
-    image: '/images/project-ecommerce.jpg',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Zustand', 'Stripe'],
-    liveUrl: 'https://ecommerce-placeholder.vercel.app',
-    repoUrl: 'https://github.com/yourusername/ecommerce',
+    image: '/images/myporto.png',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'React Hook Form'],
+    liveUrl: 'https://portfolio-brown-mu-87.vercel.app/about',
+    repoUrl: undefined,
     featured: true,
     category: 'web',
-    year: 2024,
+    year: 2025,
     isExternal: true,
   },
   {
@@ -93,5 +94,7 @@ export function getFeaturedProjects(): Project[] {
 }
 
 export function getAllProjects(): Project[] {
-  return projects.sort((a, b) => b.year - a.year)
+  const featured = projects.filter((p) => p.featured)
+  const nonFeatured = projects.filter((p) => !p.featured).sort((a, b) => b.year - a.year)
+  return [...featured, ...nonFeatured]
 }
