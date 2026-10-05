@@ -55,26 +55,28 @@ export const projects: Project[] = [
     isExternal: true,
   },
   {
-    slug: 'plumbing',
-    title: 'Plumbing Business Website',
-    description: 'Professional plumbing service site with booking, testimonials, emergency contact.',
+    slug: 'hydrosync',
+    title: 'Hydrosync',
+    description: 'Modern plumbing business platform with real-time booking, service management, and customer communication tools.',
     longDescription: `
-      A professional website for a plumbing business featuring service listings,
-      customer testimonials, online booking system, and emergency contact information.
+      Hydrosync is a full-featured plumbing business platform designed to streamline operations and enhance customer experience. 
+      Built for plumbing professionals, it combines a customer-facing booking portal with powerful backend tools for service management.
       
       **Key Features:**
-      - Service listings with pricing
-      - Customer testimonials carousel
-      - Online booking form with React Hook Form
-      - Emergency contact button
-      - Email notifications via Nodemailer
-      - Responsive design with Tailwind CSS
-      - SEO optimized for local search
+      - Real-time online booking with availability calendar
+      - Service catalog with dynamic pricing & estimates
+      - Customer portal for appointment history & communication
+      - Automated SMS/email notifications & reminders
+      - Technician dispatch & job tracking dashboard
+      - Invoice generation & payment processing (Stripe)
+      - Emergency request routing with priority queuing
+      - SEO-optimized for local search visibility
+      - Fully responsive, mobile-first design
     `,
     image: '/images/project-plumbing.jpg',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React Hook Form', 'Nodemailer'],
-    liveUrl: 'https://plumbing-placeholder.vercel.app',
-    repoUrl: 'https://github.com/yourusername/plumbing',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React Hook Form', 'Stripe', 'Nodemailer', 'Prisma', 'PostgreSQL'],
+    liveUrl: 'https://hydrosync-ten.vercel.app/',
+    repoUrl: 'https://github.com/Ayamcypha/hydrosync/tree/main/hydrosync',
     featured: true,
     category: 'web',
     year: 2025,
